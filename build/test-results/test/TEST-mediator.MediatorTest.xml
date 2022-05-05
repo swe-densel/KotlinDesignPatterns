@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="mediator.MediatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-05-05T06:13:00" hostname="192.168.254.129" time="0.021">
+  <properties/>
+  <testcase name="startChatRoom()" classname="mediator.MediatorTest" time="0.021"/>
+  <system-out><![CDATA[Thu May 05 14:13:00 PST 2022 [Robert] : Hi John!
+Thu May 05 14:13:00 PST 2022 [John] : Hello Robert!
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
