@@ -1,37 +1,27 @@
 package facade
 
 class ShopFacade {
-    private var billing : Billing? = null
-    private var delivery : Delivery? = null
-    private var warehouse : Warehouse? = null
+    private val billing : Billing = Billing()
+    private val delivery : Delivery = Delivery()
+    private val warehouse : Warehouse = Warehouse()
 
-    val itemList = ArrayList<Item>()
+    private var item : Item? = null
 
-    constructor(){
-        billing = Billing()
-        delivery = Delivery()
-        warehouse = Warehouse()
+    fun addItem(item : Item) : String {
+        this.item = item
+        return "Added ${item.name}"
     }
 
-    fun addItem(item : Item) {
-        println("Added ${item.name}")
-        itemList.add(item)
+    fun checkout() : String {
+        return if (warehouse.isAvailable(this.item!!))
+            warehouse.reserveItem(this.item!!)
+        else "${this.item!!.name} is not available"
     }
 
-    fun checkout() {
-        for (item in itemList){
-            if (warehouse?.isAvailable(item) == true)
-                warehouse?.reserveItem(item)
-        }
-    }
+    fun pay() : Double = billing.getPayableAmount(this.item!!)
 
-    fun pay() = billing!!.getPayableAmount(itemList)
-
-    fun deliver() {
-        for (item in itemList){
-            delivery?.retrievePackage(item)
-            delivery?.assignPackage(item)
-        }
+    fun deliver() : String {
+        return delivery.retrievePackage(this.item!!) + delivery.assignPackage(this.item!!)
     }
 
 }

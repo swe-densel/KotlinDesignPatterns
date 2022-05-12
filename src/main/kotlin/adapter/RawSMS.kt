@@ -1,6 +1,6 @@
 package adapter
 
-class RawSMS {
+class RawSMS (message: String) {
     var transactionID : String = ""
     var timestamp : String = ""
     var message : String = ""
@@ -8,7 +8,7 @@ class RawSMS {
     var recipient : String = ""
     var sender : String = ""
 
-    constructor(message: String) {
+    init {
         this.message = message
     }
 }

@@ -2,17 +2,17 @@ package builder
 
 import java.util.*
 
-class Form {
+class Form private constructor(builder: FormBuilder){
     var firstName: String = ""
     var middleName: String = ""
     var lastName: String = ""
     var address: String = ""
-    var birthDate : Date? = null
+    var birthDate : Date?
     var spouseFirstName: String = ""
     var spouseMiddleName: String = ""
     var spouseLastName: String = ""
 
-    constructor(builder: FormBuilder) {
+    init {
         this.firstName = builder.firstName
         this.middleName = builder.middleName
         this.lastName = builder.lastName
@@ -23,7 +23,7 @@ class Form {
         this.spouseLastName = builder.spouseLastName
     }
 
-    class FormBuilder {
+    class FormBuilder(firstName: String, lastName: String) {
         var firstName: String = ""
         var middleName: String = ""
         var lastName: String = ""
@@ -33,7 +33,7 @@ class Form {
         var spouseMiddleName: String = ""
         var spouseLastName: String = ""
 
-        constructor(firstName: String, lastName: String) {
+        init {
             this.firstName = firstName
             this.lastName = lastName
         }

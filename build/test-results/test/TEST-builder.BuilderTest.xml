@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="builder.BuilderTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-05-12T05:31:19" hostname="MSI" time="0.024">
+  <properties/>
+  <testcase name="checkAddress()" classname="builder.BuilderTest" time="0.022"/>
+  <testcase name="checkLastName()" classname="builder.BuilderTest" time="0.001"/>
+  <testcase name="checkFirstName()" classname="builder.BuilderTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

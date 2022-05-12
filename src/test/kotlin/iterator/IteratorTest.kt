@@ -13,6 +13,8 @@ class IteratorTest {
             val name = iterator.next()
             println("Name : ${name}")
         }
+
+        //need to assertEquals for each name?
     }
 
 }

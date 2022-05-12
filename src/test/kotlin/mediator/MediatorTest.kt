@@ -11,5 +11,7 @@ class MediatorTest {
 
         robert.sendMessage("Hi John!")
         john.sendMessage("Hello Robert!")
+
+        //need to assertEquals the sendMessages
     }
 }
